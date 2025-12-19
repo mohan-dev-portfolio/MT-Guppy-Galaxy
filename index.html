@@ -1,70 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Mobile-first meta tag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MT Guppy Galaxy - Home</title>
-  <meta name="description" content="MT Guppy Galaxy is a futuristic, mobile-first online guppy store offering premium Elegant, Vibrant, and Rare guppies." />
-  <meta name="keywords" content="MT Guppy Galaxy, online guppy store, elegant guppy, vibrant guppy, rare guppy, aquarium, futuristic" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="MT Guppy Galaxy - Home" />
-  <meta property="og:description" content="Discover premium guppies for your aquarium at MT Guppy Galaxy." />
-  <meta property="og:image" content="images/hero.jpg" />
-  <meta property="og:url" content="http://example.com/index.html" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
-  <!-- GSAP for smooth animations -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MT Guppy Galaxy - Premium Aquatic Collection</title>
+  <meta name="description" content="Discover the most exotic and vibrant guppies at MT Guppy Galaxy. Premium aquatic treasures for your aquarium.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
   <!-- Loader -->
-  <div id="loader" class="loader">
-    <div class="spinner"></div>
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <p class="loader-text">Loading Galaxy</p>
+    </div>
   </div>
 
   <!-- Header -->
-  <header>
+  <header id="header">
     <div class="container header-container">
-      <!-- Logo: Using an image (if available) plus unified text -->
-      <div class="logo">
-        <img class="logo-img" src="images/logo.png" alt="Logo" />
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <img src="images/logo.png" alt="Logo" class="logo-img">
+        </div>
         <span class="logo-text">MT Guppy Galaxy</span>
-      </div>
-      <nav>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav id="nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="active">🏠 Home</a></li>
+          <li><a href="products.html">🐠 Products</a></li>
+          <li><a href="cart.html">🛒 Cart <span class="cart-badge" id="cartCount">0</span></a></li>
+          <li><a href="contact.html">📧 Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h2 class="hero-title">Dive Into a Galaxy of Guppies</h2>
+  <section class="hero-section">
+    <div class="hero-3d-container">
+      <div class="hero-3d-card">
+        <div class="hero-glow-orb"></div>
+      </div>
+    </div>
+    
+    <div class="hero-content" id="heroContent">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Premium Aquatic Collection
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="hero-title-line">Dive Into A</span>
+        <span class="hero-title-line gradient-text">Galaxy of Guppies</span>
+      </h1>
+      
       <p class="hero-subtitle">
-        Discover our exclusive, vibrant collection and find your aquatic treasure.
+        Discover our exclusive collection of vibrant, exotic guppies. Each fish is carefully selected to bring stunning beauty to your aquarium.
       </p>
-      <a href="products.html" class="btn hero-btn">Shop Now</a>
+      
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary">
+          🐠 Explore Collection
+        </a>
+        <a href="contact.html" class="btn btn-secondary">
+          📞 Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">✨ Why Choose Us</span>
+        <h2 class="section-title">Premium <span class="text-gradient">Quality</span> Guaranteed</h2>
+        <p class="section-subtitle">We're committed to providing the healthiest and most vibrant guppies for your aquarium.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🌟</div>
+          <h3>Premium Selection</h3>
+          <p>Each guppy is hand-selected for exceptional color patterns and health.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚚</div>
+          <h3>Safe Delivery</h3>
+          <p>Temperature-controlled packaging ensures your fish arrive healthy and stress-free.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💎</div>
+          <h3>Rare Varieties</h3>
+          <p>Access exclusive and rare guppy breeds you won't find anywhere else.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🛡️</div>
+          <h3>Health Guarantee</h3>
+          <p>All our fish come with a live arrival guarantee for your peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🐠 Featured</span>
+        <h2 class="section-title">Popular <span class="text-gradient">Guppies</span></h2>
+        <p class="section-subtitle">Our best-selling and most sought-after aquatic beauties.</p>
+      </div>
+      
+      <div class="product-grid">
+        <!-- Product Card 1 -->
+        <div class="product-card fade-in" data-title="Elegant Guppy" data-price="300" data-category="Elegant">
+          <div class="product-image-container">
+            <img src="images/guppy1.svg" alt="Elegant Guppy">
+            <span class="product-badge">Popular</span>
+            <button class="product-wishlist" aria-label="Add to wishlist">❤️</button>
+          </div>
+          <div class="product-content">
+            <p class="product-category">Elegant</p>
+            <h3 class="product-title">Elegant Guppy</h3>
+            <p class="product-description">Graceful flowing fins with iridescent color patterns.</p>
+            <div class="product-footer">
+              <span class="product-price">₹300</span>
+              <button class="add-to-cart btn-small">🛒 Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card fade-in" data-title="Vibrant Guppy" data-price="400" data-category="Vibrant">
+          <div class="product-image-container">
+            <img src="images/guppy2.svg" alt="Vibrant Guppy">
+            <span class="product-badge">Trending</span>
+            <button class="product-wishlist" aria-label="Add to wishlist">❤️</button>
+          </div>
+          <div class="product-content">
+            <p class="product-category">Vibrant</p>
+            <h3 class="product-title">Vibrant Guppy</h3>
+            <p class="product-description">Striking neon colors that light up any aquarium.</p>
+            <div class="product-footer">
+              <span class="product-price">₹400</span>
+              <button class="add-to-cart btn-small">🛒 Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card fade-in" data-title="Rare Guppy" data-price="500" data-category="Rare">
+          <div class="product-image-container">
+            <img src="images/guppy3.svg" alt="Rare Galaxy Guppy">
+            <span class="product-badge">Exclusive</span>
+            <button class="product-wishlist" aria-label="Add to wishlist">❤️</button>
+          </div>
+          <div class="product-content">
+            <p class="product-category">Rare</p>
+            <h3 class="product-title">Rare Galaxy Guppy</h3>
+            <p class="product-description">Ultra-rare genetic patterns found only in our collection.</p>
+            <div class="product-footer">
+              <span class="product-price">₹500</span>
+              <button class="add-to-cart btn-small">🛒 Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="products.html" class="btn btn-primary">View All Products →</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-logo">
-        <div class="logo">
-          <img class="logo-img" src="images/logo.png" alt="Logo" />
-          <span class="logo-text">MT Guppy Galaxy</span>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <img src="images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <span class="logo-text">MT Guppy Galaxy</span>
+          </a>
+          <p>Your trusted source for premium, exotic guppies. We bring the beauty of the aquatic world to your home.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html">Elegant Guppies</a></li>
+            <li><a href="products.html">Vibrant Guppies</a></li>
+            <li><a href="products.html">Rare Guppies</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
         </div>
       </div>
-      <p>© 2025 MT Guppy Galaxy. All Rights Reserved.</p>
+      
+      <div class="footer-bottom">
+        <p>© 2025 MT Guppy Galaxy. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </div>
   </footer>
 

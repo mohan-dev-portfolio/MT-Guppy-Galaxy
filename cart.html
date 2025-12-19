@@ -1,62 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Mobile-first meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MT Guppy Galaxy - Cart</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container header-container">
-        <!-- Logo -->
-        <div class="logo">
-          <img class="logo-img" src="images/logo.png" alt="Logo" />
-          <span class="logo-text">MT Guppy Galaxy</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - MT Guppy Galaxy</title>
+  <meta name="description" content="Review your cart and checkout your premium guppy selections.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <p class="loader-text">Loading Galaxy</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <img src="images/logo.png" alt="Logo" class="logo-img">
         </div>
-        <nav>
+        <span class="logo-text">MT Guppy Galaxy</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="products.html">🐠 Products</a></li>
+          <li><a href="cart.html" class="active">🛒 Cart <span class="cart-badge" id="cartCount">0</span></a></li>
+          <li><a href="contact.html">📧 Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="section-badge">🛒 Your Cart</span>
+        <h2 class="section-title">Shopping <span class="text-gradient">Cart</span></h2>
+      </div>
+
+      <div class="cart-container">
+        <!-- Cart Items -->
+        <div class="cart-items" id="cartItems">
+          <h3>🐠 Your Selected Guppies</h3>
+          
+          <!-- Cart Empty State (shown when cart is empty) -->
+          <div class="cart-empty" id="cartEmpty">
+            <div class="cart-empty-icon">🛒</div>
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any guppies yet. Start exploring our collection!</p>
+            <a href="products.html" class="btn btn-primary">Browse Products</a>
+          </div>
+
+          <!-- Cart Items Container (populated by JS) -->
+          <div id="cartItemsList"></div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+          <h3>📋 Order Summary</h3>
+          
+          <div class="cart-summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">₹0</span>
+          </div>
+          
+          <div class="cart-summary-row">
+            <span>Shipping</span>
+            <span id="shipping">₹50</span>
+          </div>
+          
+          <div class="cart-summary-row">
+            <span>Tax (5%)</span>
+            <span id="tax">₹0</span>
+          </div>
+          
+          <div class="cart-summary-row total">
+            <span>Total</span>
+            <span id="total">₹50</span>
+          </div>
+
+          <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+            💳 Proceed to Checkout
+          </button>
+          
+          <a href="products.html" class="btn btn-secondary checkout-btn" style="margin-top: 0.5rem;">
+            ← Continue Shopping
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <img src="images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <span class="logo-text">MT Guppy Galaxy</span>
+          </a>
+          <p>Your trusted source for premium, exotic guppies. We bring the beauty of the aquatic world to your home.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="cart.html">Cart</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li>
-              <button id="toggleMode" class="mode-toggle" title="Toggle Dark Mode">🌙</button>
-            </li>
           </ul>
-        </nav>
-      </div>
-    </header>
-    
-    <!-- Cart Section -->
-    <section class="cart-section">
-      <div class="container">
-        <h2>Your Cart</h2>
-        <div id="cartItems">
-          <p>Your cart is empty.</p>
         </div>
-        <button id="checkoutBtn" class="btn checkout-btn">Checkout</button>
-      </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-logo">
-          <div class="logo">
-            <img class="logo-img" src="images/logo.png" alt="Logo" />
-            <span class="logo-text">MT Guppy Galaxy</span>
-          </div>
+        
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html">Elegant Guppies</a></li>
+            <li><a href="products.html">Vibrant Guppies</a></li>
+            <li><a href="products.html">Rare Guppies</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+          </ul>
         </div>
+        
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
         <p>© 2025 MT Guppy Galaxy. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
       </div>
-    </footer>
-    
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

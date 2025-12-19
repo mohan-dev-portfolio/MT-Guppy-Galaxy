@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2a"/>
+      <stop offset="100%" style="stop-color:#2a1a4a"/>
+    </linearGradient>
+    <linearGradient id="fish3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c0c0c0"/>
+      <stop offset="30%" style="stop-color:#e8e8e8"/>
+      <stop offset="50%" style="stop-color:#b0d4ff"/>
+      <stop offset="70%" style="stop-color:#e8e8e8"/>
+      <stop offset="100%" style="stop-color:#a0a0a0"/>
+    </linearGradient>
+    <linearGradient id="tail3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="50%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#7b2fff"/>
+    </linearGradient>
+    <radialGradient id="galaxy" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#7b2fff;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow3">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sparkle">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg3)"/>
+  
+  <!-- Stars/sparkles -->
+  <circle cx="40" cy="40" r="2" fill="#ffffff" filter="url(#sparkle)"/>
+  <circle cx="360" cy="60" r="1.5" fill="#00d4ff" filter="url(#sparkle)"/>
+  <circle cx="80" cy="260" r="2" fill="#7b2fff" filter="url(#sparkle)"/>
+  <circle cx="320" cy="240" r="1.5" fill="#ffffff" filter="url(#sparkle)"/>
+  <circle cx="200" cy="30" r="2" fill="#ff2d92" filter="url(#sparkle)"/>
+  <circle cx="150" cy="270" r="1.5" fill="#00d4ff" filter="url(#sparkle)"/>
+  <circle cx="280" cy="50" r="1" fill="#ffffff" filter="url(#sparkle)"/>
+  <circle cx="100" cy="80" r="1" fill="#7b2fff" filter="url(#sparkle)"/>
+  
+  <!-- Galaxy swirl background -->
+  <ellipse cx="300" cy="80" rx="60" ry="40" fill="url(#galaxy)" transform="rotate(30 300 80)"/>
+  <ellipse cx="100" cy="220" rx="50" ry="30" fill="url(#galaxy)" transform="rotate(-20 100 220)"/>
+  
+  <!-- Guppy Fish Body -->
+  <g filter="url(#glow3)" transform="translate(60, 85)">
+    <!-- Elaborate tail -->
+    <path d="M175 65 Q250 0 280 65 Q250 130 175 65" fill="url(#tail3)" opacity="0.9"/>
+    <path d="M170 65 Q235 15 265 65 Q235 115 170 65" fill="url(#tail3)" opacity="0.7"/>
+    <path d="M165 65 Q215 35 245 65 Q215 95 165 65" fill="url(#tail3)" opacity="0.5"/>
+    
+    <!-- Body - platinum/silver -->
+    <ellipse cx="115" cy="65" rx="70" ry="40" fill="url(#fish3)"/>
+    
+    <!-- Dragon scale pattern overlay -->
+    <path d="M70 50 L85 35 L100 50 L85 65 Z" fill="rgba(0,212,255,0.2)"/>
+    <path d="M95 50 L110 35 L125 50 L110 65 Z" fill="rgba(123,47,255,0.2)"/>
+    <path d="M120 50 L135 35 L150 50 L135 65 Z" fill="rgba(255,45,146,0.2)"/>
+    <path d="M82 65 L97 50 L112 65 L97 80 Z" fill="rgba(0,212,255,0.15)"/>
+    <path d="M107 65 L122 50 L137 65 L122 80 Z" fill="rgba(123,47,255,0.15)"/>
+    
+    <!-- Dorsal fin - elaborate -->
+    <path d="M75 25 Q100 -15 130 10 Q140 25 130 30 Q100 20 75 25" fill="url(#tail3)" opacity="0.85"/>
+    
+    <!-- Ventral fins -->
+    <path d="M90 105 Q100 125 85 115" fill="url(#tail3)" opacity="0.6"/>
+    <path d="M110 105 Q120 125 105 115" fill="url(#tail3)" opacity="0.6"/>
+    
+    <!-- Pectoral fin -->
+    <ellipse cx="75" cy="80" rx="22" ry="12" fill="rgba(176,212,255,0.5)" transform="rotate(35 75 80)"/>
+    
+    <!-- Eye - larger, more detailed -->
+    <circle cx="60" cy="60" r="14" fill="#1a0a2a"/>
+    <circle cx="60" cy="60" r="10" fill="#ffffff"/>
+    <circle cx="62" cy="58" r="6" fill="#2a1a4a"/>
+    <circle cx="62" cy="58" r="3" fill="#00d4ff"/>
+    <circle cx="64" cy="56" r="2" fill="#ffffff"/>
+    
+    <!-- Shimmer highlights -->
+    <ellipse cx="100" cy="50" rx="15" ry="5" fill="rgba(255,255,255,0.3)" transform="rotate(-10 100 50)"/>
+    <ellipse cx="130" cy="55" rx="10" ry="3" fill="rgba(255,255,255,0.2)" transform="rotate(-5 130 55)"/>
+  </g>
+  
+  <!-- Magical particles around fish -->
+  <circle cx="180" cy="110" r="3" fill="#00d4ff" opacity="0.6" filter="url(#sparkle)"/>
+  <circle cx="320" cy="140" r="2" fill="#7b2fff" opacity="0.5" filter="url(#sparkle)"/>
+  <circle cx="280" cy="180" r="2.5" fill="#ff2d92" opacity="0.4" filter="url(#sparkle)"/>
+</svg>

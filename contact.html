@@ -1,60 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Mobile-first meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MT Guppy Galaxy - Contact</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="favicon.png" type="image/png" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container header-container">
-        <!-- Logo -->
-        <div class="logo">
-          <img class="logo-img" src="images/logo.png" alt="Logo" />
-          <span class="logo-text">MT Guppy Galaxy</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - MT Guppy Galaxy</title>
+  <meta name="description" content="Get in touch with MT Guppy Galaxy. We're here to help with all your aquatic needs.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Particles Background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <p class="loader-text">Loading Galaxy</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <img src="images/logo.png" alt="Logo" class="logo-img">
         </div>
-        <nav>
+        <span class="logo-text">MT Guppy Galaxy</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="products.html">🐠 Products</a></li>
+          <li><a href="cart.html">🛒 Cart <span class="cart-badge" id="cartCount">0</span></a></li>
+          <li><a href="contact.html" class="active">📧 Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info fade-in">
+          <span class="section-badge">📧 Get In Touch</span>
+          <h2>Let's <span class="text-gradient">Connect</span></h2>
+          <p>Have questions about our guppies or need help with your order? We're here to help! Reach out to us through any of the channels below.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                <h4>Our Location</h4>
+                <p>123 Aquarium Street, Mumbai, India</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-text">
+                <h4>Phone Number</h4>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div class="contact-item-text">
+                <h4>Email Address</h4>
+                <p>hello@mtguppygalaxy.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">⏰</div>
+              <div class="contact-item-text">
+                <h4>Business Hours</h4>
+                <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container fade-in">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+            </div>
+            
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+              ✉️ Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">❓ FAQ</span>
+        <h2 class="section-title">Frequently <span class="text-gradient">Asked</span></h2>
+        <p class="section-subtitle">Quick answers to common questions about our guppies and services.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚚</div>
+          <h3>Shipping Policy</h3>
+          <p>We ship nationwide with temperature-controlled packaging. Delivery takes 2-5 business days depending on location.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💰</div>
+          <h3>Payment Options</h3>
+          <p>We accept all major credit cards, debit cards, UPI, and net banking. Cash on delivery available in select areas.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🔄</div>
+          <h3>Return Policy</h3>
+          <p>Live arrival guarantee on all fish. If any issues, contact us within 2 hours of delivery with photos.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🐠</div>
+          <h3>Fish Care</h3>
+          <p>Each order includes detailed care instructions. Our team is always available to answer your aquarium questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <img src="images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <span class="logo-text">MT Guppy Galaxy</span>
+          </a>
+          <p>Your trusted source for premium, exotic guppies. We bring the beauty of the aquatic world to your home.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="cart.html">Cart</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li>
-              <button id="toggleMode" class="mode-toggle" title="Toggle Dark Mode">🌙</button>
-            </li>
           </ul>
-        </nav>
-      </div>
-    </header>
-    
-    <!-- Contact Section -->
-    <section class="contact-section">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-logo">
-          <div class="logo">
-            <img class="logo-img" src="images/logo.png" alt="Logo" />
-            <span class="logo-text">MT Guppy Galaxy</span>
-          </div>
         </div>
-        <p>© 2025 MT Guppy Galaxy. All Rights Reserved.</p>
+        
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html">Elegant Guppies</a></li>
+            <li><a href="products.html">Vibrant Guppies</a></li>
+            <li><a href="products.html">Rare Guppies</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
       </div>
-    </footer>
-  </body>
+      
+      <div class="footer-bottom">
+        <p>© 2025 MT Guppy Galaxy. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

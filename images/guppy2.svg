@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1a0a"/>
+      <stop offset="100%" style="stop-color:#1a3a2a"/>
+    </linearGradient>
+    <linearGradient id="fish2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="50%" style="stop-color:#ff2d92"/>
+      <stop offset="100%" style="stop-color:#ffaa00"/>
+    </linearGradient>
+    <linearGradient id="tail2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff2d92"/>
+      <stop offset="100%" style="stop-color:#ffaa00"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg2)"/>
+  
+  <!-- Water plants -->
+  <path d="M30 300 Q35 250 25 200 Q40 220 30 180 Q45 200 35 160" stroke="#2d5a3d" stroke-width="3" fill="none"/>
+  <path d="M50 300 Q55 260 45 220 Q60 240 50 200" stroke="#1d4a2d" stroke-width="3" fill="none"/>
+  <path d="M370 300 Q365 240 375 180 Q360 200 370 150" stroke="#2d5a3d" stroke-width="3" fill="none"/>
+  
+  <!-- Bubbles -->
+  <circle cx="60" cy="60" r="6" fill="rgba(255,170,0,0.2)"/>
+  <circle cx="340" cy="90" r="8" fill="rgba(255,45,146,0.2)"/>
+  <circle cx="90" cy="240" r="5" fill="rgba(255,107,53,0.2)"/>
+  <circle cx="300" cy="200" r="7" fill="rgba(255,170,0,0.15)"/>
+  
+  <!-- Guppy Fish Body -->
+  <g filter="url(#glow2)" transform="translate(70, 90)">
+    <!-- Large flowing tail -->
+    <path d="M170 60 Q230 10 260 60 Q230 110 170 60" fill="url(#tail2)" opacity="0.9"/>
+    <path d="M165 60 Q220 25 250 60 Q220 95 165 60" fill="url(#tail2)" opacity="0.7"/>
+    <path d="M160 60 Q200 40 230 60 Q200 80 160 60" fill="url(#tail2)" opacity="0.5"/>
+    
+    <!-- Body -->
+    <ellipse cx="110" cy="60" rx="65" ry="38" fill="url(#fish2)"/>
+    
+    <!-- Dorsal fin - larger -->
+    <path d="M80 22 Q110 -10 140 22 Q110 28 80 22" fill="url(#tail2)" opacity="0.85"/>
+    
+    <!-- Anal fin -->
+    <path d="M120 98 Q140 120 150 98" fill="url(#tail2)" opacity="0.7"/>
+    
+    <!-- Pectoral fin -->
+    <ellipse cx="80" cy="75" rx="18" ry="12" fill="rgba(255,107,53,0.6)" transform="rotate(25 80 75)"/>
+    
+    <!-- Eye -->
+    <circle cx="60" cy="55" r="13" fill="#1a1a2a"/>
+    <circle cx="60" cy="55" r="9" fill="#ffffff"/>
+    <circle cx="62" cy="53" r="5" fill="#0a0a1a"/>
+    <circle cx="64" cy="51" r="2" fill="#ffffff"/>
+    
+    <!-- Body stripes -->
+    <path d="M85 40 Q95 60 85 80" stroke="rgba(255,255,255,0.15)" stroke-width="8" fill="none"/>
+    <path d="M110 35 Q120 60 110 85" stroke="rgba(255,255,255,0.12)" stroke-width="8" fill="none"/>
+    <path d="M135 40 Q145 60 135 80" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="none"/>
+  </g>
+  
+  <!-- Light effect -->
+  <ellipse cx="200" cy="30" rx="150" ry="30" fill="rgba(255,255,255,0.02)"/>
+</svg>
